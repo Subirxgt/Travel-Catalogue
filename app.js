@@ -98,7 +98,18 @@ app.use((req, res) => {
 // ===============================
 
 app.use((err, req, res, next) => {
+
     console.error("Unhandled application error:", err);
+
+    if (err && err.code === "LIMIT_FILE_SIZE") {
+
+        return res.status(400).render("error", {
+            title: "Image Too Large",
+            message: "The uploaded image must be smaller than 10 MB.",
+            errors: []
+        });
+
+    }
 
     res.status(500).render("error", {
         title: "Server Error",
@@ -106,7 +117,6 @@ app.use((err, req, res, next) => {
         errors: []
     });
 });
-
 
 // ===============================
 // START SERVER
