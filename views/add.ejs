@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Destination - Travel Catalogue</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <header>
+
+        <div class="container header-content">
+
+            <a href="/" class="logo">
+                ✈ Travel<span>Catalogue</span>
+            </a>
+
+            <a href="/" class="add-btn">
+                ← Back to Catalogue
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Form -->
+    <main class="container">
+
+        <div class="form-wrapper">
+
+            <div class="form-card">
+
+                <h1>Add a New Destination</h1>
+
+                <p class="form-subtitle">
+                    Share a beautiful destination with the travel community.
+                </p>
+
+
+                <form
+                    action="/destinations"
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Name -->
+                        <div class="form-group">
+
+                            <label for="name">
+                                Destination Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="e.g. Manali"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Country -->
+                        <div class="form-group">
+
+                            <label for="country">
+                                Country
+                            </label>
+
+                            <input
+                                type="text"
+                                id="country"
+                                name="country"
+                                placeholder="e.g. India"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Category -->
+                        <div class="form-group">
+
+                            <label for="category">
+                                Category
+                            </label>
+
+                            <select
+                                id="category"
+                                name="category"
+                                required
+                            >
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="Mountain">
+                                    Mountain
+                                </option>
+
+                                <option value="Beach">
+                                    Beach
+                                </option>
+
+                                <option value="Heritage">
+                                    Heritage
+                                </option>
+
+                                <option value="Adventure">
+                                    Adventure
+                                </option>
+
+                                <option value="Wildlife">
+                                    Wildlife
+                                </option>
+
+                                <option value="City">
+                                    City
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Budget -->
+                        <div class="form-group">
+
+                            <label for="budget">
+                                Budget
+                            </label>
+
+                            <select
+                                id="budget"
+                                name="budget"
+                                required
+                            >
+
+                                <option value="">
+                                    Select budget
+                                </option>
+
+                                <option value="Low">
+                                    Low
+                                </option>
+
+                                <option value="Medium">
+                                    Medium
+                                </option>
+
+                                <option value="High">
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Season -->
+                        <div class="form-group">
+
+                            <label for="bestSeason">
+                                Best Season
+                            </label>
+
+                            <select
+                                id="bestSeason"
+                                name="bestSeason"
+                                required
+                            >
+
+                                <option value="">
+                                    Select season
+                                </option>
+
+                                <option value="Spring">
+                                    Spring
+                                </option>
+
+                                <option value="Summer">
+                                    Summer
+                                </option>
+
+                                <option value="Monsoon">
+                                    Monsoon
+                                </option>
+
+                                <option value="Autumn">
+                                    Autumn
+                                </option>
+
+                                <option value="Winter">
+                                    Winter
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Rating -->
+                        <div class="form-group">
+
+                            <label for="rating">
+                                Rating
+                            </label>
+
+                            <input
+                                type="number"
+                                id="rating"
+                                name="rating"
+                                min="0"
+                                max="5"
+                                step="0.1"
+                                placeholder="e.g. 4.5"
+                                required
+                            >
+
+                            <small>
+                                Enter a rating between 0 and 5.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Description -->
+                        <div class="form-group full-width">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="description"
+                                name="description"
+                                placeholder="Describe the destination, attractions, activities, and experiences..."
+                                required
+                            ></textarea>
+
+                            <small>
+                                Provide at least 10 characters describing the destination.
+                            </small>
+
+                        </div>
+
+
+                        <!-- Image -->
+                        <div class="form-group full-width">
+
+                            <label for="image">
+                                Destination Image
+                            </label>
+
+                            <input
+                                type="file"
+                                id="image"
+                                name="image"
+                                accept="image/jpeg,image/png,image/jpg,image/webp"
+                            >
+
+                            <small>
+                                JPG, JPEG, PNG or WEBP — Maximum 5 MB
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Buttons -->
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            ✈ Add Destination
+                        </button>
+
+                        <a
+                            href="/"
+                            class="cancel-btn"
+                        >
+                            Cancel
+                        </a>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Travel Catalogue · Explore. Discover. Travel.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+
+     

@@ -1,0 +1,572 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2563eb;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #111827;
+}
+
+.add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    background: #2563eb;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    margin: 32px 0;
+    padding: 55px 40px;
+    border-radius: 22px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.95),
+            rgba(14, 165, 233, 0.9)
+        );
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 1.05rem;
+    opacity: 0.92;
+}
+
+
+/* =========================
+   FILTER SECTION
+========================= */
+
+.filter-box {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 32px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+.filter-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.filter-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 12px;
+}
+
+.filter-form input,
+.filter-form select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    background: #fff;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.filter-form input:focus,
+.filter-form select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.filter-btn {
+    border: none;
+    padding: 11px 20px;
+    border-radius: 9px;
+    background: #111827;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: #000;
+}
+
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 1.6rem;
+    color: #111827;
+}
+
+.destination-count {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   DESTINATION GRID
+========================= */
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-bottom: 50px;
+}
+
+
+/* =========================
+   DESTINATION CARD
+========================= */
+
+.destination-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.destination-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.destination-placeholder {
+    width: 100%;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5e7eb;
+    color: #6b7280;
+    font-size: 2.5rem;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.destination-content {
+    padding: 20px;
+}
+
+.destination-title {
+    font-size: 1.25rem;
+    font-weight: 750;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.destination-country {
+    color: #6b7280;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+}
+
+.destination-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 15px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.rating {
+    color: #d97706;
+    font-weight: 700;
+}
+
+.destination-description {
+    color: #4b5563;
+    font-size: 0.93rem;
+    line-height: 1.65;
+}
+
+
+/* =========================
+   ADD FORM PAGE
+========================= */
+
+.form-wrapper {
+    max-width: 850px;
+    margin: 45px auto;
+}
+
+.form-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+.form-card h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.form-subtitle {
+    color: #6b7280;
+    margin-bottom: 28px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    outline: none;
+    background: white;
+    transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.form-group small {
+    margin-top: 5px;
+    color: #6b7280;
+    font-size: 0.82rem;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.submit-btn {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 9px;
+    background: #2563eb;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+}
+
+.cancel-btn {
+    padding: 11px 20px;
+    border-radius: 9px;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    font-weight: 600;
+}
+
+.cancel-btn:hover {
+    background: #f3f4f6;
+}
+
+
+/* =========================
+   ERROR PAGE
+========================= */
+
+.error-container {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.error-card {
+    width: min(650px, 92%);
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.07);
+}
+
+.error-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.error-card h1 {
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.error-card p {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.error-list {
+    text-align: left;
+    background: #fef2f2;
+    color: #991b1b;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 9px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    background: white;
+    border: 1px dashed #d1d5db;
+    border-radius: 16px;
+    padding: 55px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.empty-state h3 {
+    margin-bottom: 7px;
+    color: #111827;
+}
+
+.empty-state p {
+    color: #6b7280;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #e5e7eb;
+    background: white;
+    padding: 25px 0;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .header-content {
+        min-height: 65px;
+    }
+
+    .hero {
+        padding: 40px 22px;
+        border-radius: 16px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .submit-btn,
+    .cancel-btn {
+        text-align: center;
+    }
+}
